@@ -1,6 +1,3 @@
-# Assignment7
-<html>
-<body>
 <html>
 <head>
   <meta charset="utf-8">
@@ -193,5 +190,3 @@
 
 </html>
 
-</body>
-</html>
