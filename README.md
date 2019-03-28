@@ -1,5 +1,6 @@
 # Assignment7
-
+<html>
+<body>
 <html>
 <head>
   <meta charset="utf-8">
@@ -190,4 +191,7 @@
 	</div>
 </body>
 
+</html>
+
+</body>
 </html>
