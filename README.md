@@ -58,14 +58,14 @@
         MapView, SceneView, WebMap, WebScene, Legend, GraphicsLayer, SimpleMarkerSymbol, PointSymbol3D, ObjectSymbol3DLayer, QueryTask, Query, dom, on, arrayUtils
       ) {
 	  
-		var view_2d;
+var view_2d;
 		var results2DLyr = new GraphicsLayer(); 
 		
-		create_2dView();
+create_2dView();
 		
 		on(dom.byId("doBtn"),"click", doQuery);
 		
-		function create_2dView() {
+function create_2dView() {
 			  var webmap = new WebMap({
 				portalItem: {
 				  id: "54e89c9d3b9a4242987115cafa4aa0fa"
@@ -76,7 +76,8 @@
 				container: "viewDiv_2d"
 			  });
 			  
-			view_2d.when(function() {
+			
+view_2d.when(function() {
 				webmap.add(results2DLyr);
 				var legend = new Legend({
 					id: "legend_2d",
@@ -89,7 +90,7 @@
 					}
 				});
 				
-				view_2d.watch("scale", function(response){
+view_2d.watch("scale", function(response){
 					if (response){
 						view_2d.scale = response;
 					}
@@ -104,7 +105,7 @@
 				
 			});				  
 		}
-		function doQuery(){
+function doQuery(){
 			var featureLayerUrl = view_2d.map.layers.items[1].url + "/" + view_2d.map.layers.items[1].layerId;
 			var qTask = new QueryTask({
 		        url: featureLayerUrl
@@ -121,16 +122,15 @@
 	          .otherwise(promiseRejected);
 		}
 		
-	    function getResults(response) {
+  function getResults(response) {
 	        dom.byId("printResults").innerHTML = response.features.length + " result(s) found!";
 			displayResultsIn2D(response);
 	    }
-		
-	    function promiseRejected(err) {
+	 function promiseRejected(err) {
 	        console.error("Query failed: ", err.message);
 	    }
 		
-		function displayResultsIn2D(response) {
+function displayResultsIn2D(response) {
 	      	results2DLyr.removeAll();
 	        var featureResults2D = arrayUtils.map(response.features, function(feature) {
 	          feature.symbol = new SimpleMarkerSymbol({
@@ -145,7 +145,7 @@
 	          return feature;
 	        });
 			
-			results2DLyr.addMany(featureResults2D);
+results2DLyr.addMany(featureResults2D);
 	        view_2d.goTo(featureResults2D);		  
 		  }function displayResultsIn2D(response) {
         	results3DLyr.removeAll();
@@ -189,4 +189,3 @@
 </body>
 
 </html>
-
