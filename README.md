@@ -16,13 +16,13 @@
       width: 100%;
     }
 	
-	#viewDiv_2d {
+#viewDiv_2d {
 		float: left;		
 		height: 100%;
 		width: 100%;
 	}
 	
-	#optionsDiv {
+#optionsDiv {
 	  position: absolute;
       top: 0px;
       right: 0px;
@@ -63,7 +63,7 @@ var view_2d;
 		
 create_2dView();
 		
-		on(dom.byId("doBtn"),"click", doQuery);
+on(dom.byId("doBtn"),"click", doQuery);
 		
 function create_2dView() {
 			  var webmap = new WebMap({
